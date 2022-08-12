@@ -1,6 +1,7 @@
 package com.mrossi.academiadigital.service;
 
 import com.mrossi.academiadigital.entity.Aluno;
+import com.mrossi.academiadigital.entity.AvaliacaoFisica;
 import com.mrossi.academiadigital.entity.form.AlunoForm;
 import com.mrossi.academiadigital.entity.form.AlunoUpdateForm;
 
@@ -17,4 +18,6 @@ public interface IAlunoService {
     Aluno update(Long id, AlunoUpdateForm formUpdate);
 
     void delete(Long id);
+
+    List<AvaliacaoFisica> getAllAvaliacaoFisica(Long id);
 }

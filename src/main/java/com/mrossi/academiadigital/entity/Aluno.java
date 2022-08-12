@@ -29,7 +29,8 @@ public class Aluno {
     private String cpf;
 
     private String bairro;
-    private LocalDate dataNascimento;
+
+    private String dataNascimento;
 
     @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
     @JsonIgnore

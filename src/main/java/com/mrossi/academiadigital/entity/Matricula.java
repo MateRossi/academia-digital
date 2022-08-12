@@ -22,6 +22,6 @@ public class Matricula {
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;
 
-    private LocalDateTime dataDaMatricula = LocalDateTime.now();
+    private String dataMatricula;
 
 }
