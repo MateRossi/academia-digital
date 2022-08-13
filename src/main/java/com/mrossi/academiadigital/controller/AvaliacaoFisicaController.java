@@ -2,6 +2,7 @@ package com.mrossi.academiadigital.controller;
 
 import com.mrossi.academiadigital.entity.AvaliacaoFisica;
 import com.mrossi.academiadigital.entity.form.AvaliacaoFisicaForm;
+import com.mrossi.academiadigital.entity.form.AvaliacaoFisicaUpdateForm;
 import com.mrossi.academiadigital.service.impl.AvalicaoFisicaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,11 @@ public class AvaliacaoFisicaController {
     @GetMapping("/{id}")
     public Optional<AvaliacaoFisica> get(@PathVariable("id") Long id) {
         return service.get(id);
+    }
+
+    @PutMapping("/{id}")
+    public AvaliacaoFisica update(@PathVariable("id") Long id, @RequestBody AvaliacaoFisicaUpdateForm form) {
+        return service.update(id, form);
     }
 
     @PostMapping

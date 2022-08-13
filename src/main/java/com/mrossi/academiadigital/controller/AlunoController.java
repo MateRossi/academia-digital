@@ -4,6 +4,7 @@ package com.mrossi.academiadigital.controller;
 import com.mrossi.academiadigital.entity.Aluno;
 import com.mrossi.academiadigital.entity.AvaliacaoFisica;
 import com.mrossi.academiadigital.entity.form.AlunoForm;
+import com.mrossi.academiadigital.entity.form.AlunoUpdateForm;
 import com.mrossi.academiadigital.service.impl.AlunoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,11 @@ public class AlunoController {
     @GetMapping("/{id}")
     public Optional<Aluno> get(@PathVariable("id") Long id) {
         return service.get(id);
+    }
+
+    @PutMapping("/{id}")
+    public Aluno update(@PathVariable("id") Long id, @RequestBody AlunoUpdateForm form) {
+        return service.update(id, form);
     }
 
     @PostMapping
