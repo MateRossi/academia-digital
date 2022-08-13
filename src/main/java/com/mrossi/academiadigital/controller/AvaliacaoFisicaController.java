@@ -7,17 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/avaliacoes")
 public class AvaliacaoFisicaController {
 
     @Autowired
-    AvalicaoFisicaServiceImpl service;
+    private AvalicaoFisicaServiceImpl service;
 
     @GetMapping
     public List<AvaliacaoFisica> getAll (){
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<AvaliacaoFisica> get(@PathVariable("id") Long id) {
+        return service.get(id);
     }
 
     @PostMapping

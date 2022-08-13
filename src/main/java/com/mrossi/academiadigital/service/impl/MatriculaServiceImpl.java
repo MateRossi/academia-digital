@@ -7,9 +7,12 @@ import com.mrossi.academiadigital.repository.AlunoRepository;
 import com.mrossi.academiadigital.repository.MatriculaRepository;
 import com.mrossi.academiadigital.service.IMatriculaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class MatriculaServiceImpl implements IMatriculaService {
 
     @Autowired
@@ -26,17 +29,17 @@ public class MatriculaServiceImpl implements IMatriculaService {
         matricula.setAluno(aluno);
         matricula.setDataMatricula(form.getDataMatricula());
 
-        return matricula;
+        return matriculaRepository.save(matricula);
     }
 
     @Override
-    public Matricula get(Long id) {
-        return null;
+    public Optional<Matricula> get(Long id) {
+        return matriculaRepository.findById(id);
     }
 
     @Override
     public List<Matricula> getAll() {
-        return null;
+        return matriculaRepository.findAll();
     }
 
     @Override

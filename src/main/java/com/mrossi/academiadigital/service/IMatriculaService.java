@@ -4,12 +4,13 @@ import com.mrossi.academiadigital.entity.Matricula;
 import com.mrossi.academiadigital.entity.form.MatriculaForm;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IMatriculaService {
 
     Matricula create(MatriculaForm form);
 
-    Matricula get(Long id);
+    Optional<Matricula> get(Long id);
 
     List<Matricula> getAll ();
 

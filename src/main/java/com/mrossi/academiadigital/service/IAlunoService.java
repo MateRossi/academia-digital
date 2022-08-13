@@ -6,12 +6,13 @@ import com.mrossi.academiadigital.entity.form.AlunoForm;
 import com.mrossi.academiadigital.entity.form.AlunoUpdateForm;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IAlunoService {
 
     Aluno create(AlunoForm form);
 
-    Aluno get(Long id);
+    Optional<Aluno> get(Long id);
 
     List<Aluno> getAll ();
 
