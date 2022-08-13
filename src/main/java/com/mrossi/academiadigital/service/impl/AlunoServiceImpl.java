@@ -51,7 +51,7 @@ public class AlunoServiceImpl implements IAlunoService {
 
     @Override
     public void delete(Long id) {
-
+        repository.delete(repository.findById(id).get());
     }
 
     @Override

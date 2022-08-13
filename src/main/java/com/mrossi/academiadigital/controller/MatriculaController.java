@@ -26,6 +26,10 @@ public class MatriculaController {
         return service.get(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        service.delete(id);
+    }
     @PostMapping
     public Matricula create (@RequestBody MatriculaForm form) {
         return service.create(form);

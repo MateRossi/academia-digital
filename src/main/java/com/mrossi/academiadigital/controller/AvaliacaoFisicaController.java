@@ -32,6 +32,11 @@ public class AvaliacaoFisicaController {
         return service.update(id, form);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        service.delete(id);
+    }
+
     @PostMapping
     public AvaliacaoFisica create(@RequestBody AvaliacaoFisicaForm form){
         return service.create(form);

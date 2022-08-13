@@ -56,5 +56,6 @@ public class AvalicaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
     @Override
     public void delete(Long id) {
+        avalicaoFisicaRepository.delete(avalicaoFisicaRepository.findById(id).get());
     }
 }

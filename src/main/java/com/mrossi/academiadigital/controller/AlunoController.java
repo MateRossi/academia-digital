@@ -34,6 +34,11 @@ public class AlunoController {
         return service.update(id, form);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        service.delete(id);
+    }
+
     @PostMapping
     public Aluno create(@RequestBody AlunoForm form){
         return service.create(form);
